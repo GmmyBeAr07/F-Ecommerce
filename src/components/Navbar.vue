@@ -60,7 +60,7 @@
             <li class="nav-item">
               <a
                 class="btn btn-primary active position-relative"
-                href="./views/cart.html">Cart
+                href="./views/Home.vue">Cart
                 <span
                   id="badge"
                   class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"></span></a>
@@ -69,10 +69,7 @@
         </div>
       </div>
     </div>
-  <!-- Container wrapper -->
-</nav>
-
-<!-- Navbar -->
+  </nav> 
 </template>
 
 <script>
@@ -94,7 +91,6 @@ export default {
     },
   },
 };
-
 </script>
 
 

@@ -2,7 +2,7 @@ const cart = JSON.parse(localStorage.getItem("cart"))
   ? JSON.parse(localStorage.getItem("cart"))
   : [];
 
-// READ //
+// READ
 console.log(cart);
 function readCart(cart) {
   document.querySelector("#cart").innerHTML = "";
@@ -54,14 +54,14 @@ function readCart(cart) {
     </button>`;
 }
 
-// Update Cart Badge //
+// Update Cart Badge
 function showCartBadge() {
   document.querySelector("#badge").innerHTML = cart ? cart.length : "";
 }
 
 readCart(cart);
 
-// UPDATE //
+// UPDATE
 function updateCart(position) {
   let qty = document.querySelector(`#remove${position}`).value;
   cart[position] = { ...cart[position], qty };
@@ -69,7 +69,7 @@ function updateCart(position) {
   readCart(cart);
 }
 
-// REMOVE //
+// REMOVE
 function removeFromCart(position) {
   let confirmation = confirm(
     "Are you sure you want to remove this product from the cart?"
@@ -82,7 +82,7 @@ function removeFromCart(position) {
   }
 }
 
-// CHECKOUT //
+// CHECKOUT
 function checkout() {
   let total = cart
     .reduce((total, product) => {

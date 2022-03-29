@@ -1,15 +1,15 @@
- <template>
-  <div class="cards">
+<template>
+  <div class="home">
   </div>
 </template>
 
 <script>
-import Landing from '@/components/CardsContent.vue'
+import Landing from '../components/Landing.vue'
 
 export default {
-  name: 'card',
+  name: 'Home',
   components: {
-    CardsContent
+    Landing
   }
 }
 </script>

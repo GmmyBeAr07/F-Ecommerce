@@ -27,34 +27,42 @@
 
 <script>
 export default {
+
+  name: "register",
+  props: ["baseURL"],
   data() {
     return {
+      username: "",
       email: "",
       password: "",
+      isAdmin: false,
     };
   },
-
+  
   methods: {
-    login() {
-      fetch("https://full-proj.herokuapp.com/User", {
-        method: "PATCH",
-        body: JSON.stringify({
-          email: this.email,
-          password: this.password,
-        }),
+    register() {
+      console.log("Register Success");
+      const person = {
+        username: this.username,
+        email: this.email,
+        password: this.password,
+      };
 
+      console.log(person);
+      fetch("https://thurs-social-media.herokuapp.com/api/auth/", {
+        method: "POST",
+        body: JSON.stringify(person),
         headers: {
           "Content-type": "application/json; charset=UTF-8",
         },
+        // mode: "no-cors"
       })
-
         .then((response) => response.json())
-
         .then((json) => {
-          console.log(json)
+          console.log(json);
+          alert("User registered");
           localStorage.setItem("jwt", json.jwt);
-          alert("User logged in");
-          this.$router.push({ name: "Products" });
+          this.$router.push({ name: "Login" });
         })
         .catch((err) => {
           alert(err);
@@ -63,6 +71,7 @@ export default {
   },
 };
 </script>
+
 
 <style>
 #Login {

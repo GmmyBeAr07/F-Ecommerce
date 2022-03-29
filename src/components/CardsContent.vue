@@ -83,6 +83,7 @@ export default {
             price: 269.99,
             img: "https://images.alphacoders.com/119/1193664.jpg",
           },
+          
           {
             title: "(SPECIAL) Chainsaw Man _-_ Full Cllection",
             category: "Manga",
